@@ -1,0 +1,1 @@
+{"version":3,"file":"stream.interfaces.d.ts","sourceRoot":"","sources":["../../../../src/types/state/stream.interfaces.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,WAAW;IAC1B,GAAG,EAAE,MAAM,CAAC;IACZ,IAAI,EAAE,OAAO,GAAG,EAAE,CAAC;IACnB,MAAM,CAAC,EAAE,WAAW,CAAC;IACrB,WAAW,EAAE,OAAO,CAAC;IACrB,MAAM,CAAC,EAAE,KAAK,CAAC;CAChB"}
