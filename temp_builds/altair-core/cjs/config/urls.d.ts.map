@@ -1,1 +1,0 @@
-{"version":3,"file":"urls.d.ts","sourceRoot":"","sources":["../../../src/config/urls.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,eAAe,CAAC;AAElD,MAAM,WAAW,SAAS;IACxB,GAAG,EAAE,MAAM,CAAC;IACZ,WAAW,EAAE,MAAM,CAAC;IACpB,OAAO,EAAE,MAAM,CAAC;IAChB,IAAI,EAAE,MAAM,CAAC;CACd;AAED,eAAO,MAAM,MAAM,EAAE,MAAM,CAAC,iBAAiB,EAAE,SAAS,CAuBvD,CAAC"}

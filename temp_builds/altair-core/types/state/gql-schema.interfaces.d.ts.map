@@ -1,1 +1,0 @@
-{"version":3,"file":"gql-schema.interfaces.d.ts","sourceRoot":"","sources":["../../../src/types/state/gql-schema.interfaces.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,kBAAkB,EAAE,MAAM,SAAS,CAAC;AAE5D,MAAM,WAAW,cAAc;IAE7B,aAAa,CAAC,EAAE,kBAAkB,CAAC;IAEnC,MAAM,CAAC,EAAE,aAAa,CAAC;IACvB,GAAG,EAAE,MAAM,CAAC;IACZ,kBAAkB,EAAE,OAAO,CAAC;IAC5B,aAAa,CAAC,EAAE,MAAM,CAAC;CACxB"}

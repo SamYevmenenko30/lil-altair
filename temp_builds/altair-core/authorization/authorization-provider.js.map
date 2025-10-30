@@ -1,1 +1,0 @@
-{"version":3,"file":"authorization-provider.js","sourceRoot":"","sources":["../../src/authorization/authorization-provider.ts"],"names":[],"mappings":"AAcA,MAAM,OAAgB,qBAAqB;IAGzC,YAAoB,QAAkC;QAAlC,aAAQ,GAAR,QAAQ,CAA0B;IAAG,CAAC;IAC1D,OAAO,CAAC,IAAY;QAClB,OAAO,IAAI,CAAC,QAAQ,CAAC,IAAI,CAAC,CAAC;IAC7B,CAAC;CAIF"}

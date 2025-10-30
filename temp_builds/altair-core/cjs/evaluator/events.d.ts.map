@@ -1,1 +1,0 @@
-{"version":3,"file":"events.d.ts","sourceRoot":"","sources":["../../../src/evaluator/events.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,eAAe,qBAAqB,CAAC;AAClD,eAAO,MAAM,sBAAsB,iBAAiB,CAAC;AACrD,eAAO,MAAM,gBAAgB,GAAI,CAAC,SAAS,MAAM,EAAE,MAAM,CAAC,WAAuB,CAAC;AAClF,eAAO,MAAM,aAAa,GAAI,CAAC,SAAS,MAAM,EAAE,MAAM,CAAC,WAAoB,CAAC"}

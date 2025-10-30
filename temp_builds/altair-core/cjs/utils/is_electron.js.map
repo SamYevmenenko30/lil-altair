@@ -1,1 +1,0 @@
-{"version":3,"file":"is_electron.js","sourceRoot":"","sources":["../../../src/utils/is_electron.ts"],"names":[],"mappings":";;AAAA,kBAAe,CAAC,CAAC,CACf,CAAC,MAAM;IACJ,MAAc,CAAC,OAAO;IACtB,MAAc,CAAC,OAAO,CAAC,QAAQ,CAAC,QAAQ,CAAC;IAC5C,CAAC,CAAC,MAAM,CAAC,SAAS,CAAC,SAAS,CAAC,KAAK,CAAC,UAAU,CAAC,CAC/C,CAAC"}

@@ -1,5 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.HTTP_VERBS = void 0;
-exports.HTTP_VERBS = ['POST', 'GET', 'PUT', 'DELETE'];
-//# sourceMappingURL=query.interfaces.js.map

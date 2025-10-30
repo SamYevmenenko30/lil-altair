@@ -1,1 +1,0 @@
-{"version":3,"file":"ui-action.d.ts","sourceRoot":"","sources":["../../../src/plugin/ui-action.ts"],"names":[],"mappings":"AAEA,oBAAY,sBAAsB;IAChC,WAAW,gBAAgB;CAC5B;AAED,qBAAa,cAAc;IAIhB,KAAK,EAAE,MAAM;IACb,QAAQ,EAAE,sBAAsB;IAChC,QAAQ,EAAE,MAAM,IAAI;IALtB,EAAE,SAAU;gBAGV,KAAK,EAAE,MAAM,EACb,QAAQ,EAAE,sBAAsB,EAChC,QAAQ,EAAE,MAAM,IAAI;IAG7B,OAAO;CAGR"}
