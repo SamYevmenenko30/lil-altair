@@ -1,0 +1,1 @@
+{"version":3,"file":"workspace.interface.js","sourceRoot":"","sources":["../../../src/types/state/workspace.interface.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,MAAM,0BAA0B,CAAC;AAEvD,MAAM,CAAC,MAAM,UAAU,GAAG;IACxB,KAAK,EAAE,OAAO;IACd,MAAM,EAAE,QAAQ;CACjB,CAAC;AAEF,MAAM,OAAO,WAAY,SAAQ,WAAmB;IAClD,YAAY,QAAgB,UAAU,CAAC,KAAK;QAC1C,KAAK,CAAC,KAAK,CAAC,CAAC;IACf,CAAC;CACF"}

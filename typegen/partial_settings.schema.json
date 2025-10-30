@@ -1,0 +1,460 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "additionalProperties": false,
+    "definitions": {
+        "MultiResponseStrategy": {
+            "enum": [
+                "append",
+                "auto",
+                "concatenate",
+                "patch"
+            ],
+            "type": "string"
+        },
+        "Record<string,string>": {
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "RecursivePartial<ITheme>": {
+            "additionalProperties": false,
+            "properties": {
+                "colors": {
+                    "$ref": "#/definitions/RecursivePartial<{black:string;darkGray:string;gray:string;lightGray:string;white:string;green:string;blue:string;rose:string;cerise:string;red:string;orange:string;yellow:string;lightRed:string;darkPurple:string;primary:string;secondary:string;tertiary:string;bg:string;offBg:string;font:string;offFont:string;border:string;offBorder:string;headerBg:string;}>"
+                },
+                "easing": {
+                    "description": "CSS transition easing function for smooth animations",
+                    "type": "string"
+                },
+                "editor": {
+                    "$ref": "#/definitions/RecursivePartial<{fontFamily:{default:string;};fontSize:number;colors:{comment:string;string:string;number:string;variable:string;keyword:string;atom:string;attribute:string;property:string;punctuation:string;definition:string;builtin:string;cursor:string;};}>"
+                },
+                "isSystem": {
+                    "description": "Whether this theme follows system preferences (light/dark mode)",
+                    "type": "boolean"
+                },
+                "shadow": {
+                    "$ref": "#/definitions/RecursivePartial<{color:string;opacity:number;}>"
+                },
+                "type": {
+                    "$ref": "#/definitions/RecursivePartial<{fontSize:{base:number;remBase:number;body:number;bodySmaller:number;};fontFamily:{default:string;};}>"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<{base:number;remBase:number;body:number;bodySmaller:number;}>": {
+            "additionalProperties": false,
+            "properties": {
+                "base": {
+                    "description": "Base font size in pixels used for calculations",
+                    "type": "number"
+                },
+                "body": {
+                    "description": "Standard body text font size",
+                    "type": "number"
+                },
+                "bodySmaller": {
+                    "description": "Smaller body text font size for secondary content",
+                    "type": "number"
+                },
+                "remBase": {
+                    "description": "Root em base size in pixels for responsive typography",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<{black:string;darkGray:string;gray:string;lightGray:string;white:string;green:string;blue:string;rose:string;cerise:string;red:string;orange:string;yellow:string;lightRed:string;darkPurple:string;primary:string;secondary:string;tertiary:string;bg:string;offBg:string;font:string;offFont:string;border:string;offBorder:string;headerBg:string;}>": {
+            "additionalProperties": false,
+            "properties": {
+                "bg": {
+                    "description": "Main background color for the application",
+                    "type": "string"
+                },
+                "black": {
+                    "description": "Black color used for high contrast elements",
+                    "type": "string"
+                },
+                "blue": {
+                    "description": "Blue color for informational elements and links",
+                    "type": "string"
+                },
+                "border": {
+                    "description": "Primary border color for main UI elements",
+                    "type": "string"
+                },
+                "cerise": {
+                    "description": "Bright magenta/cerise color for special emphasis",
+                    "type": "string"
+                },
+                "darkGray": {
+                    "description": "Dark gray color for muted text and secondary elements",
+                    "type": "string"
+                },
+                "darkPurple": {
+                    "description": "Dark purple color for premium features or special elements",
+                    "type": "string"
+                },
+                "font": {
+                    "description": "Primary text color for readable content",
+                    "type": "string"
+                },
+                "gray": {
+                    "description": "Medium gray color for neutral backgrounds and borders",
+                    "type": "string"
+                },
+                "green": {
+                    "description": "Green color typically used for success states and positive actions",
+                    "type": "string"
+                },
+                "headerBg": {
+                    "description": "Background color specifically for the header section",
+                    "type": "string"
+                },
+                "lightGray": {
+                    "description": "Light gray color for subtle backgrounds and dividers",
+                    "type": "string"
+                },
+                "lightRed": {
+                    "description": "Light red/salmon color for subtle error indicators",
+                    "type": "string"
+                },
+                "offBg": {
+                    "description": "Alternative background color for cards, panels, and sections",
+                    "type": "string"
+                },
+                "offBorder": {
+                    "description": "Secondary border color for subtle divisions",
+                    "type": "string"
+                },
+                "offFont": {
+                    "description": "Secondary text color for less emphasized content",
+                    "type": "string"
+                },
+                "orange": {
+                    "description": "Orange color for warning states and secondary actions",
+                    "type": "string"
+                },
+                "primary": {
+                    "description": "Primary brand color used for main interactive elements",
+                    "type": "string"
+                },
+                "red": {
+                    "description": "Red color for error states and destructive actions",
+                    "type": "string"
+                },
+                "rose": {
+                    "description": "Rose/pink color for accent elements and highlights",
+                    "type": "string"
+                },
+                "secondary": {
+                    "description": "Secondary brand color used for supporting interactive elements",
+                    "type": "string"
+                },
+                "tertiary": {
+                    "description": "Tertiary brand color used for accent and decorative elements",
+                    "type": "string"
+                },
+                "white": {
+                    "description": "White color for light backgrounds and text",
+                    "type": "string"
+                },
+                "yellow": {
+                    "description": "Yellow color for caution states and highlights",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<{color:string;opacity:number;}>": {
+            "additionalProperties": false,
+            "properties": {
+                "color": {
+                    "description": "Color used for drop shadows and elevation effects",
+                    "type": "string"
+                },
+                "opacity": {
+                    "description": "Opacity level for shadow effects (0.0 to 1.0)",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<{comment:string;string:string;number:string;variable:string;keyword:string;atom:string;attribute:string;property:string;punctuation:string;definition:string;builtin:string;cursor:string;}>": {
+            "additionalProperties": false,
+            "properties": {
+                "atom": {
+                    "description": "Color for atomic values like boolean literals",
+                    "type": "string"
+                },
+                "attribute": {
+                    "description": "Color for HTML/XML/GraphQL attributes",
+                    "type": "string"
+                },
+                "builtin": {
+                    "description": "Color for built-in functions and types",
+                    "type": "string"
+                },
+                "comment": {
+                    "description": "Color for code comments and documentation",
+                    "type": "string"
+                },
+                "cursor": {
+                    "description": "Color for the text cursor in the editor",
+                    "type": "string"
+                },
+                "definition": {
+                    "description": "Color for function, class, type definitions",
+                    "type": "string"
+                },
+                "keyword": {
+                    "description": "Color for programming language keywords",
+                    "type": "string"
+                },
+                "number": {
+                    "description": "Color for numeric literals in code",
+                    "type": "string"
+                },
+                "property": {
+                    "description": "Color for properties",
+                    "type": "string"
+                },
+                "punctuation": {
+                    "description": "Color for punctuation marks like brackets and commas",
+                    "type": "string"
+                },
+                "string": {
+                    "description": "Color for string literals in code",
+                    "type": "string"
+                },
+                "variable": {
+                    "description": "Color for variable names and identifiers",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<{default:string;}>": {
+            "additionalProperties": false,
+            "properties": {
+                "default": {
+                    "description": "Default system font stack for UI elements",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<{default:string;}>_1": {
+            "additionalProperties": false,
+            "properties": {
+                "default": {
+                    "description": "Font family specifically for code editor and monospace content",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<{fontFamily:{default:string;};fontSize:number;colors:{comment:string;string:string;number:string;variable:string;keyword:string;atom:string;attribute:string;property:string;punctuation:string;definition:string;builtin:string;cursor:string;};}>": {
+            "additionalProperties": false,
+            "properties": {
+                "colors": {
+                    "$ref": "#/definitions/RecursivePartial<{comment:string;string:string;number:string;variable:string;keyword:string;atom:string;attribute:string;property:string;punctuation:string;definition:string;builtin:string;cursor:string;}>"
+                },
+                "fontFamily": {
+                    "$ref": "#/definitions/RecursivePartial<{default:string;}>_1"
+                },
+                "fontSize": {
+                    "description": "Font size for code editor text",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<{fontSize:{base:number;remBase:number;body:number;bodySmaller:number;};fontFamily:{default:string;};}>": {
+            "additionalProperties": false,
+            "properties": {
+                "fontFamily": {
+                    "$ref": "#/definitions/RecursivePartial<{default:string;}>"
+                },
+                "fontSize": {
+                    "$ref": "#/definitions/RecursivePartial<{base:number;remBase:number;body:number;bodySmaller:number;}>"
+                }
+            },
+            "type": "object"
+        },
+        "SettingsLanguage": {
+            "enum": [
+                "cs-CZ",
+                "de-DE",
+                "en-US",
+                "es-ES",
+                "fr-FR",
+                "it-IT",
+                "ja-JP",
+                "ko-KR",
+                "pl-PL",
+                "pt-BR",
+                "ro-RO",
+                "ru-RU",
+                "sr-SP",
+                "uk-UA",
+                "vi-VN",
+                "zh-CN"
+            ],
+            "type": "string"
+        }
+    },
+    "properties": {
+        "addQueryDepthLimit": {
+            "description": "Specifies how deep the 'Add query' functionality should go. You can specify any valid positive integer.",
+            "type": "number"
+        },
+        "alert.disableUpdateNotification": {
+            "description": "Disable update notification",
+            "type": "boolean"
+        },
+        "alert.disableWarnings": {
+            "description": "Disable warning alerts",
+            "type": "boolean"
+        },
+        "banners.disable": {
+            "description": "Disable banners",
+            "type": "boolean"
+        },
+        "beta.disable.newEditor": {
+            "description": "Disable new editor beta",
+            "type": "boolean"
+        },
+        "beta.disable.newScript": {
+            "description": "Disable new script beta",
+            "type": "boolean"
+        },
+        "disableLineNumbers": {
+            "description": "Disable line numbers",
+            "type": "boolean"
+        },
+        "disablePushNotification": {
+            "default": false,
+            "description": "Specifies if native push notifications should be disabled",
+            "type": "boolean"
+        },
+        "doc.hideDeprecatedItems": {
+            "description": "Hides deprecated Doc items",
+            "type": "boolean"
+        },
+        "editor.shortcuts": {
+            "$ref": "#/definitions/Record<string,string>",
+            "description": "Contains shortcut to action mapping"
+        },
+        "enableExperimental": {
+            "default": false,
+            "description": "Enable experimental features.\nNote: The features might be unstable",
+            "type": "boolean"
+        },
+        "enableTablistScrollbar": {
+            "description": "Enable the scrollbar in the tab list",
+            "type": "boolean"
+        },
+        "historyDepth": {
+            "description": "Number of items allowed in history pane",
+            "type": "number"
+        },
+        "introspection.options.description": {
+            "description": "Whether to include descriptions in the introspection result",
+            "type": "boolean"
+        },
+        "introspection.options.directiveIsRepeatable": {
+            "description": "Whether to include `isRepeatable` flag on directives",
+            "type": "boolean"
+        },
+        "introspection.options.inputValueDeprecation": {
+            "description": "Whether target GraphQL server supports deprecation of input values",
+            "type": "boolean"
+        },
+        "introspection.options.schemaDescription": {
+            "description": "Whether to include `description` field on schema",
+            "type": "boolean"
+        },
+        "introspection.options.specifiedByUrl": {
+            "description": "Whether to include `specifiedByUrl` in the introspection result",
+            "type": "boolean"
+        },
+        "language": {
+            "$ref": "#/definitions/SettingsLanguage",
+            "description": "Specifies the language"
+        },
+        "plugin.list": {
+            "default": [
+            ],
+            "description": "Specifies a list of enabled plugins.\n\nPlugins are specified in a string format `<plugin-source>:<plugin-name>@<version>::[<opt>]->[<opt-value>]`:\n- `<plugin-source>`: The source of the plugin. Can be 'npm', 'url' or 'github'\n- `<plugin-name>` (required): The name of the plugin. Plugin names must begin with `altair-graphql-plugin-`\n- `<version>`: The version of the plugin. If not specified, the latest version will be used\n- `[<opt>]->[<opt-value>]`: Additional configuration for the plugin. This is used when you specify the source as 'url'. In this case, you can specify the URL where the plugin is hosted.",
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "request.withCredentials": {
+            "description": "Send requests with credentials (cookies)",
+            "type": "boolean"
+        },
+        "response.hideExtensions": {
+            "description": "Hides extensions object",
+            "type": "boolean"
+        },
+        "response.stream.strategy": {
+            "$ref": "#/definitions/MultiResponseStrategy",
+            "description": "Determine the handling strategy for multiple responses"
+        },
+        "schema.reload.onEnvChange": {
+            "description": "Reload schema when switching environments",
+            "type": "boolean"
+        },
+        "schema.reloadOnStart": {
+            "description": "Reload schema on app start",
+            "type": "boolean"
+        },
+        "script.allowedCookies": {
+            "default": [
+            ],
+            "description": "List of cookies to be accessible in the pre-request script",
+            "items": {
+                "type": "string"
+            },
+            "type": "array"
+        },
+        "tabSize": {
+            "description": "Specifies the tab size for the editor",
+            "type": "number"
+        },
+        "theme": {
+            "default": "'system'",
+            "description": "Specifies the theme. Themes available by default are 'light', 'dark', 'system', 'dracula'.\nAdditional themes can be added via plugins.",
+            "type": "string"
+        },
+        "theme.dark": {
+            "description": "Specifies the theme for dark mode",
+            "type": "string"
+        },
+        "theme.editorFontFamily": {
+            "description": "Specifies the font family for the editors. Any valid CSS font family combination can be used here",
+            "type": "string"
+        },
+        "theme.editorFontSize": {
+            "description": "Specifies the font size for the editors",
+            "type": "number"
+        },
+        "theme.fontsize": {
+            "default": 24,
+            "description": "Specifies the base font size",
+            "type": "number"
+        },
+        "themeConfig": {
+            "$ref": "#/definitions/RecursivePartial<ITheme>",
+            "description": "Specify custom theme config to override the specified theme values"
+        },
+        "themeConfig.dark": {
+            "$ref": "#/definitions/RecursivePartial<ITheme>",
+            "description": "Theme config object for dark mode"
+        }
+    },
+    "type": "object"
+}
+
