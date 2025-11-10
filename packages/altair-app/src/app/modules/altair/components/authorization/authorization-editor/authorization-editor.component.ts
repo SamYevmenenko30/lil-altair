@@ -9,6 +9,7 @@ import {
 import { NonNullableFormBuilder } from '@angular/forms';
 import {
   AUTHORIZATION_TYPE_LIST,
+  AUTHORIZATION_TYPES,
   AuthorizationState,
   AuthorizationTypes,
   DEFAULT_AUTHORIZATION_TYPE,
@@ -30,7 +31,7 @@ export class AuthorizationEditorComponent implements OnInit {
   typeForm = this.formBuilder.group<{
     type: AuthorizationTypes;
   }>({
-    type: DEFAULT_AUTHORIZATION_TYPE,
+    type: AUTHORIZATION_TYPES.BEARER, // Changed from DEFAULT_AUTHORIZATION_TYPE
   });
 
   readonly authorizationState = input<AuthorizationState>();
@@ -45,11 +46,12 @@ export class AuthorizationEditorComponent implements OnInit {
   AUTH_TYPES = AUTHORIZATION_TYPE_LIST;
 
   ngOnInit(): void {
-    const authorizationState = this.authorizationState();
-    if (authorizationState) {
-      this.typeForm.patchValue({
-        type: authorizationState.type,
-      });
-    }
+    // Always set the type to bearer regardless of what's in the state
+    this.typeForm.patchValue({
+      type: AUTHORIZATION_TYPES.BEARER,
+    });
+
+    // Disable the form control to prevent changes
+    this.typeForm.controls.type.disable();
   }
 }

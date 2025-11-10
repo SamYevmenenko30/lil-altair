@@ -441,7 +441,7 @@ export class AltairComponent {
       }
     }
 
-    this.showcaseAiPlugin();
+    // this.showcaseAiPlugin();
   }
 
   /**
